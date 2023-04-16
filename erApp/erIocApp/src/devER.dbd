@@ -1,0 +1,3 @@
+registrar(configure_ERRegister)
+device(er, INST_IO, ER_dset, "ERZ")
+device(erevent, INST_IO, ER_event_dset, "ERZ")

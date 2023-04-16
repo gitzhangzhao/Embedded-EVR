@@ -1,0 +1,148 @@
+include "menuScan.dbd"
+include "menuYesNo.dbd"
+include "menuPini.dbd"
+include "menuEventEnable.dbd"
+recordtype(erevent) {
+	include "dbCommon.dbd"
+
+#
+#   programmable pulse outputs
+#
+    field(VAL, DBF_DOUBLE){
+        prompt("Current value")
+        asl(ASL0)
+        pp(TRUE)
+        interest(1)
+    }
+	field(ENM,DBF_LONG) {
+		prompt("Event Number")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		base(HEX)
+		interest(1)
+	}
+	field(LENM,DBF_LONG) {
+		prompt("Last Event Number")
+		special(SPC_NOMOD)
+		pp(TRUE)
+		interest(1)
+	}
+	field(LOUT,DBF_LONG) {
+		prompt("Last Out Enable Mask")
+		special(SPC_NOMOD)
+		pp(TRUE)
+		interest(1)
+	}
+	field(OUT0,DBF_MENU) {
+		prompt("Out 0 Enable")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		interest(1)
+		menu(menuEventEnable)
+	}
+	field(OUT1,DBF_MENU) {
+		prompt("Out 1 Enable")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		interest(1)
+		menu(menuEventEnable)
+	}
+	field(OUT2,DBF_MENU) {
+		prompt("Out 2 Enable")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		interest(1)
+		menu(menuEventEnable)
+	}
+	field(OUT3,DBF_MENU) {
+		prompt("Out 3 Enable")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		interest(1)
+		menu(menuEventEnable)
+	}
+	field(OUT4,DBF_MENU) {
+		prompt("Out 4 Enable")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		interest(1)
+		menu(menuEventEnable)
+	}
+	field(OUT5,DBF_MENU) {
+		prompt("Out 5 Enable")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		interest(1)
+		menu(menuEventEnable)
+	}
+	field(OUT6,DBF_MENU) {
+		prompt("Out 6 Enable")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		interest(1)
+		menu(menuEventEnable)
+	}
+	field(OUT7,DBF_MENU) {
+		prompt("Out 7 Enable")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		interest(1)
+		menu(menuEventEnable)
+	}
+	field(OUT8,DBF_MENU) {
+		prompt("Out 8 Enable")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		interest(1)
+		menu(menuEventEnable)
+	}
+	field(OUT9,DBF_MENU) {
+		prompt("Out 9 Enable")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		interest(1)
+		menu(menuEventEnable)
+	}
+	field(OUTA,DBF_MENU) {
+		prompt("Out 10 Enable")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		interest(1)
+		menu(menuEventEnable)
+	}
+	field(OUTB,DBF_MENU) {
+		prompt("Out 11 Enable")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		interest(1)
+		menu(menuEventEnable)
+	}
+	field(OUTC,DBF_MENU) {
+		prompt("Out 12 Enable")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		interest(1)
+		menu(menuEventEnable)
+	}
+	field(OUTD,DBF_MENU) {
+		prompt("Out 13 Enable")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		interest(1)
+		menu(menuEventEnable)
+	}
+	field(LTCH,DBF_MENU) {
+		prompt("Time Stamp Latch Enable")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		interest(1)
+		menu(menuEventEnable)
+	}
+	field(IRQS,DBF_MENU) {
+		prompt("Interrupt trigger")
+		promptgroup(GUI_DISPLAY)
+		pp(TRUE)
+		interest(1)
+		menu(menuEventEnable)
+	}
+}

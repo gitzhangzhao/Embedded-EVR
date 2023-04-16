@@ -1,0 +1,4 @@
+menu(menuEventEnable) {
+	choice(menu_event_disable,"Disabled")
+	choice(menu_event_enable,"Enabled")
+}

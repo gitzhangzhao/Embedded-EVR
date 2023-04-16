@@ -1,0 +1,4 @@
+menu(menuPolarity) {
+	choice(menuPolarity_Normal,"Normal")
+	choice(menuPolarity_Inverted,"Inverted")
+}

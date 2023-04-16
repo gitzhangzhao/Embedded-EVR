@@ -1,0 +1,9 @@
+record(erevent, "zhangzh:er:erevent_50")
+{
+    field(DTYP, "ERZ")
+    field(PINI, "YES")
+    field(SCAN, "Passive")
+    field(ENM, "0x50")
+    field(OUT4, "Enabled")
+    field(OUT5, "Enabled")
+}

@@ -1,0 +1,216 @@
+/**
+ * File              : AXI_Lite.v
+ * Author            : zhangzhao <zhangzhao@ihep.ac.cn>
+ * Date              : 06.06.2022
+ * Last Modified Date: 06.06.2022
+ * Last Modified By  : zhangzhao <zhangzhao@ihep.ac.cn>
+ * Description       : AXI_Lite_S00_AXI bus logic wrapper
+ */
+
+`timescale 1ns / 1ps
+
+module AXI_Lite #
+    (
+        // Users to add parameters here
+        // User parameters ends
+        // Do not modify the parameters beyond this line
+        // Parameters of Axi Slave Bus Interface S00_AXI
+        parameter integer C_S00_AXI_DATA_WIDTH = 32,
+        parameter integer C_S00_AXI_ADDR_WIDTH = 8
+    )
+    (
+        // Users to add ports here
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register00,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register01,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register02,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register03,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register04,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register05,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register06,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register07,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register08,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register09,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register10,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register11,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register12,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register13,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register14,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register15,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register16,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register17,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register18,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register19,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register20,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register21,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register22,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register23,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register24,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register25,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register26,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register27,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register28,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register29,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register30,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register31,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register32,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register33,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register34,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register35,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register36,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register37,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register38,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register39,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register40,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register41,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register42,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register43,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register44,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register45,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register46,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register47,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register48,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register49,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register50,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register51,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register52,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register53,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register54,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register55,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register56,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register57,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register58,
+        output wire     [C_S00_AXI_DATA_WIDTH-1:0]        register59,
+
+        input  wire     [C_S00_AXI_DATA_WIDTH-1:0]        register00_in,
+        input  wire     [C_S00_AXI_DATA_WIDTH-1:0]        register04_in,
+        input  wire     [C_S00_AXI_DATA_WIDTH-1:0]        register05_in,
+        input  wire     [C_S00_AXI_DATA_WIDTH-1:0]        register06_in,
+        input  wire     [C_S00_AXI_DATA_WIDTH-1:0]        register07_in,
+        input  wire     [C_S00_AXI_DATA_WIDTH-1:0]        register08_in,
+        // User ports ends
+
+        // Do not modify the ports beyond this line
+        // Ports of Axi Slave Bus Interface S00_AXI
+        input  wire                                       s00_axi_aclk,
+        input  wire                                       s00_axi_aresetn,
+        input  wire     [C_S00_AXI_ADDR_WIDTH-1 : 0]      s00_axi_awaddr,
+        input  wire     [2 : 0]                           s00_axi_awprot,
+        input  wire                                       s00_axi_awvalid,
+        output wire                                       s00_axi_awready,
+        input  wire     [C_S00_AXI_DATA_WIDTH-1 : 0]      s00_axi_wdata,
+        input  wire     [(C_S00_AXI_DATA_WIDTH/8)-1 : 0]  s00_axi_wstrb,
+        input  wire                                       s00_axi_wvalid,
+        output wire                                       s00_axi_wready,
+        output wire     [1 : 0]                           s00_axi_bresp,
+        output wire                                       s00_axi_bvalid,
+        input  wire                                       s00_axi_bready,
+        input  wire     [C_S00_AXI_ADDR_WIDTH-1 : 0]      s00_axi_araddr,
+        input  wire     [2 : 0]                           s00_axi_arprot,
+        input  wire                                       s00_axi_arvalid,
+        output wire                                       s00_axi_arready,
+        output wire     [C_S00_AXI_DATA_WIDTH-1 : 0]      s00_axi_rdata,
+        output wire     [1 : 0]                           s00_axi_rresp,
+        output wire                                       s00_axi_rvalid,
+        input  wire                                       s00_axi_rready
+    );
+    // Instantiation of Axi Bus Interface S00_AXI
+    AXI_Lite_S00_AXI #(
+                         .C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
+                         .C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
+                     ) AXI_Lite_S00_AXI_inst
+                     (
+                         .S_AXI_ACLK(s00_axi_aclk),
+                         .S_AXI_ARESETN(s00_axi_aresetn),
+                         .S_AXI_AWADDR(s00_axi_awaddr),
+                         .S_AXI_AWPROT(s00_axi_awprot),
+                         .S_AXI_AWVALID(s00_axi_awvalid),
+                         .S_AXI_AWREADY(s00_axi_awready),
+                         .S_AXI_WDATA(s00_axi_wdata),
+                         .S_AXI_WSTRB(s00_axi_wstrb),
+                         .S_AXI_WVALID(s00_axi_wvalid),
+                         .S_AXI_WREADY(s00_axi_wready),
+                         .S_AXI_BRESP(s00_axi_bresp),
+                         .S_AXI_BVALID(s00_axi_bvalid),
+                         .S_AXI_BREADY(s00_axi_bready),
+                         .S_AXI_ARADDR(s00_axi_araddr),
+                         .S_AXI_ARPROT(s00_axi_arprot),
+                         .S_AXI_ARVALID(s00_axi_arvalid),
+                         .S_AXI_ARREADY(s00_axi_arready),
+                         .S_AXI_RDATA(s00_axi_rdata),
+                         .S_AXI_RRESP(s00_axi_rresp),
+                         .S_AXI_RVALID(s00_axi_rvalid),
+                         .S_AXI_RREADY(s00_axi_rready),
+                         .register00(register00),
+                         .register01(register01),
+                         .register02(register02),
+                         .register03(register03),
+                         .register04(register04),
+                         .register05(register05),
+                         .register06(register06),
+                         .register07(register07),
+                         .register08(register08),
+                         .register09(register09),
+                         .register10(register10),
+                         .register11(register11),
+                         .register12(register12),
+                         .register13(register13),
+                         .register14(register14),
+                         .register15(register15),
+                         .register16(register16),
+                         .register17(register17),
+                         .register18(register18),
+                         .register19(register19),
+                         .register20(register20),
+                         .register21(register21),
+                         .register22(register22),
+                         .register23(register23),
+                         .register24(register24),
+                         .register25(register25),
+                         .register26(register26),
+                         .register27(register27),
+                         .register28(register28),
+                         .register29(register29),
+                         .register30(register30),
+                         .register31(register31),
+                         .register32(register32),
+                         .register33(register33),
+                         .register34(register34),
+                         .register35(register35),
+                         .register36(register36),
+                         .register37(register37),
+                         .register38(register38),
+                         .register39(register39),
+                         .register40(register40),
+                         .register41(register41),
+                         .register42(register42),
+                         .register43(register43),
+                         .register44(register44),
+                         .register45(register45),
+                         .register46(register46),
+                         .register47(register47),
+                         .register48(register48),
+                         .register49(register49),
+                         .register50(register50),
+                         .register51(register51),
+                         .register52(register52),
+                         .register53(register53),
+                         .register54(register54),
+                         .register55(register55),
+                         .register56(register56),
+                         .register57(register57),
+                         .register58(register58),
+                         .register59(register59),
+                         .register00_in(register00_in),
+                         .register04_in(register04_in),
+                         .register05_in(register05_in),
+                         .register06_in(register06_in),
+                         .register07_in(register07_in),
+                         .register08_in(register08_in)
+                     );
+
+    // Add user logic here
+
+    // User logic ends
+
+endmodule
+
